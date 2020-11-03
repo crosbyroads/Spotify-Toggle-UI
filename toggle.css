@@ -1,0 +1,104 @@
+
+body, html{
+	padding: 0;
+	margin: 0;
+	--rounded: 50%;
+}
+
+body{
+	/* background: #294162; */
+	background: rgb(41,65,98);
+	/* background: linear-gradient(360deg, rgba(41,65,98,1) 0%, rgba(0,212,255,1) 100%); */
+	background: linear-gradient(360deg, #000 10%, #505050 100%);
+	color: rgba(255, 255, 255, 0.8);
+	height: 100vh;
+	display: grid;
+	place-items: center;
+	cursor: default;
+}
+
+.toggleContainer{
+	width: 300px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+
+.toggleTitle{
+	height: 100%;
+	line-height: 34px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	letter-spacing: 0.5px;
+}
+
+.lblToggle{
+	width: 60px;
+	height: 30px;
+	display: block;
+	border: 2px solid rgba(225, 213, 213, 0.782);
+	position: relative;
+	border-radius: 30px;
+	transition: all ease-in-out 0.3;
+	cursor: pointer;
+}
+
+.toggle-ball{
+	width: 30px;
+	height: 30px;
+	background: rgba(225, 213, 213, 0.864);
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: var(--rounded);
+	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* toggle position */
+.toggle-ball.holdToggle{
+	left: 30px;
+	background: #fff;
+}
+
+/* untoggle position */
+.toggle-ball.reverseToggle{
+	left: 0px;
+	background: #fff;
+}
+
+.hidebx{
+	display: none;
+}
+
+/* toggle animation */
+@keyframes strech {
+	0%{
+		transform: scaleX(1) translateX(-1px);
+		left: 0px;
+	}
+	50%{
+		transform: scaleX(1.2) translateX(-2px);
+		left: -2px;
+	}
+	100%{
+		transform: scaleX(1);
+		background: #fff;
+		left: 30px;
+	}
+}
+
+/* untoggle animation */
+@keyframes reverseStrech {
+	0%{
+		transform: scaleX(1)  translateX(1px);
+		left: 30px;
+	}
+	50%{
+		transform: scaleX(1.2)  translateX(2px);
+		left: 31px;
+	}
+	100%{
+		transform: scaleX(1);
+		background: #fff;
+		left: 0px;
+	}
+}

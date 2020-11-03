@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Toggle</title>
+	<link rel="stylesheet" href="toggle.css">
+</head>
+<body>
+	<section>
+		<div class="toggleContainer">
+			<div class="toggleTitle">Show Local Files</div>
+			<input type="checkbox" name="" id="checkId"class="checkbox hidebx">
+			<label class="lblToggle" for="checkId">
+				<div class="toggle-ball"></div>
+			</label>
+		</div>
+		<div class="toggleContainer">
+			<div class="toggleTitle">Show Local Files</div>
+			<input type="checkbox" name="" id="checkId"class="checkbox hidebx">
+			<label class="lblToggle" for="checkId">
+				<div class="toggle-ball"></div>
+			</label>
+		</div>
+	</section>
+
+	<script>
+		let checkbox = document.querySelectorAll('.checkbox')
+		let lblToggle = document.querySelector('.lblToggle')
+		let ball = document.querySelector('.toggle-ball')
+
+		lblToggle.addEventListener('click', () => {
+			if (checkbox[0].checked === false) {
+				lblToggle.style.cssText = "background: #1db954"
+				ball.style.cssText = "animation: strech 0.3s"
+				setTimeout(()=>{
+					ball.style.cssText = "left: 30px; background: #fff;"
+				}, 250)
+			}else{
+				lblToggle.style.cssText = "background: transparent"
+				ball.style.cssText = "animation: reverseStrech 0.3s"
+				setTimeout(()=>{
+					ball.style.cssText = "left: 0px; background: rgba(225, 213, 213, 0.864);"
+				}, 250)
+			}
+		})
+
+		lblToggle.addEventListener('dblclick', (e) => {
+			e.preventDefault()
+			e.stopPropagation()
+			console.log(e)
+		})
+	</script>
+</body>
+</html>
