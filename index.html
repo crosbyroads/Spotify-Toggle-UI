@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Spotify Toggle</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<section class="centroid_300">
+		<h3>Settings</h3>
+		
+		<aside class="toggleContainer">
+			<div class="toggleTitle">Show Local Files</div>
+			<input type="checkbox" name="localFiles" id="checkedId" class="checkbox hidebx" />
+			<label for="checkedId" class="lblToggle">
+				<div class="toggle-ball"></div>
+			</label>
+		</aside>
+	</section>
+
+	<script>
+		const sel = (selector) => {
+			return document.querySelector(selector)
+		}
+
+		let checkbox = sel('.checkbox')
+		let lblToggle = sel('.lblToggle')
+		let ball = sel('.toggle-ball')
+
+		lblToggle.addEventListener('click', () => {
+			if (checkbox.checked === false) {
+				// TOGGLE ON
+				lblToggle.style.cssText = "background: #1db954"
+				ball.style.cssText = "animation: setToggle 0.3s"
+				setTimeout(() => {
+					ball.style.cssText = "left: 30px; background: #fff"
+				}, 250)
+			} else {
+				// TOGGLE OFF
+				lblToggle.style.cssText = "background: transparent"
+				ball.style.cssText = "animation: unsetToggle 0.3s"
+				setTimeout(() => {
+					ball.style.cssText = " left: 0px; background: rgba(225, 213, 213, 0.844;"
+				}, 250)
+			}
+		})
+
+	</script>
+</body>
+</html>
